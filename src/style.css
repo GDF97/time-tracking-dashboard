@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+
+:root {
+  /* Primary */
+  --Blue: hsl(246, 80%, 60%);
+  --Light-red-work: hsl(15, 100%, 70%);
+  --Soft-blue-play: hsl(195, 74%, 62%);
+  --Light-red-study: hsl(348, 100%, 68%);
+  --Lime-green-exercise: hsl(145, 58%, 55%);
+  --Violet-social: hsl(264, 64%, 52%);
+  --Soft-orange-self-care: hsl(43, 84%, 65%);
+
+  /* Neutral */
+  --Very-dark-blue: hsl(226, 43%, 10%);
+  --Dark-blue: hsl(235, 46%, 20%);
+  --Desaturated-blue: hsl(235, 45%, 61%);
+  --Pale-Blue: hsl(236, 100%, 87%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* outline: 1px solid red; */
+  color: white;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Rubik", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: var(--Very-dark-blue);
+}
+
+.container {
+  width: 1360px;
+  display: flex;
+  gap: 2rem;
+  min-height: 600px;
+}
+
+.left-section {
+  background-color: var(--Dark-blue);
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.left-section > :where(.profile-article, .buttons-wrapper) {
+  padding: 1.5rem;
+}
+
+.left-section > .profile-article {
+  width: 100%;
+  height: 70%;
+  background-color: var(--Blue);
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  border-radius: 15px;
+}
+
+.left-section > .profile-article > .profile-picture {
+  border: 3px solid white;
+  width: 100px;
+  border-radius: 50%;
+}
+
+.left-section > .profile-article > div > p {
+  font-size: 18px;
+  color: var(--Pale-Blue);
+}
+
+.left-section > .profile-article > div > h1 {
+  color: white;
+  font-size: 3rem;
+  font-weight: 300;
+  padding-top: 1rem;
+}
+
+.left-section > .buttons-wrapper {
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.left-section > .buttons-wrapper > button {
+  text-align: left;
+  font-size: 18px;
+  background-color: transparent;
+  color: var(--Desaturated-blue);
+  border: none;
+  cursor: pointer;
+}
+
+.left-section > .buttons-wrapper > :where(button):is(.active, :hover) {
+  color: white;
+}
+
+.right-section {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.right-section > .card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.right-section > .card > .top-card {
+  width: 100%;
+  padding: 1.5rem;
+  background: transparent;
+  background-position: top right;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.right-section > .card > .top-card > img {
+  position: absolute;
+  right: 0;
+  top: -10px;
+  z-index: 1;
+}
+
+.right-section > .card > .top-card::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  z-index: 0;
+}
+
+.right-section > .card:nth-child(1) > .top-card,
+.right-section > .card:nth-child(1) > .top-card::before {
+  background-color: var(--Light-red-work);
+}
+
+.right-section > .card:nth-child(2) > .top-card,
+.right-section > .card:nth-child(2) > .top-card::before {
+  background-color: var(--Soft-blue-play);
+}
+
+.right-section > .card:nth-child(3) > .top-card,
+.right-section > .card:nth-child(3) > .top-card::before {
+  background-color: var(--Light-red-study);
+}
+
+.right-section > .card:nth-child(4) > .top-card,
+.right-section > .card:nth-child(4) > .top-card::before {
+  background-color: var(--Lime-green-exercise);
+}
+
+.right-section > .card:nth-child(5) > .top-card,
+.right-section > .card:nth-child(5) > .top-card::before {
+  background-color: var(--Violet-social);
+}
+
+.right-section > .card:nth-child(6) > .top-card,
+.right-section > .card:nth-child(6) > .top-card::before {
+  background-color: var(--Soft-orange-self-care);
+}
+
+.right-section > .card > .bottom-card {
+  background-color: var(--Dark-blue);
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  border-radius: 20px;
+  z-index: 2;
+}
+
+.right-section > .card > .bottom-card > div:nth-child(1) {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.right-section > .card > .bottom-card > div:nth-child(1) > p {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.right-section > .card > .bottom-card > div:nth-child(2) > h1 {
+  font-size: 3.5rem;
+  font-weight: 300;
+}
+
+.right-section > .card > .bottom-card > div:nth-child(2) > p {
+  color: var(--Desaturated-blue);
+}
+
+@media (max-width: 1360px) {
+  .container {
+    width: 1150px;
+  }
+  .right-section {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 1150px) {
+  body {
+    padding: 2rem;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .left-section > .profile-article {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .left-section > .buttons-wrapper {
+    flex-direction: row;
+    gap: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .left-section > .profile-article {
+    gap: 1rem;
+  }
+
+  .left-section > .profile-article > .profile-picture {
+    width: 75px;
+    height: 75px;
+    align-self: center;
+  }
+
+  .left-section > .profile-article > div > h1 {
+    font-size: 1.25rem;
+    padding-top: 0.25rem;
+  }
+
+  .right-section > .card > .bottom-card {
+    gap: 1rem;
+  }
+
+  .right-section > .card > .bottom-card > div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .right-section > .card > .bottom-card > div:nth-child(2) > h1 {
+    font-size: 24px;
+  }
+
+  .right-section > .card > .bottom-card > div:nth-child(2) > p {
+    font-size: 14px;
+  }
+}
